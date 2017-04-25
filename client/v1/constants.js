@@ -79,7 +79,13 @@ const ROUTES = {
 const WEB_ROUTES = {
     challengeReset: 'challenge/reset/',
     challenge: 'challenge/',
-    userInfo: '<%= id %>/'
+    userInfo: '<%= id %>/',
+    follow: 'web/friendships/<%= id %>/follow/',
+    unfollow: 'web/friendships/<%= id %>/unfollow/',
+    like: 'web/likes/<%= id %>/like/',
+    unlike: 'web/likes/<%= id %>/unlike/',
+    userInfo: '<%= id %>/?__a=1',
+    mediaInfo: 'p/<%= mediaId %>/?__a=1'
 }
 
 const PRIVATE_KEY = {

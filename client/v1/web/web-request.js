@@ -13,7 +13,15 @@ function WebRequest() {
     this._request.headers = _.extend(_.clone(this._request.headers), {
         'Upgrade-Insecure-Requests': '1',
         'Cache-Control': 'no-cache',
-        'Pragma': 'no-cache'
+        'Pragma': 'no-cache',
+        'Accept-Encoding': 'gzip, deflate',
+        'Connection': 'keep-alive',
+        'Content-Length': '0',
+        'Host': 'www.instagram.com',
+        'Origin': 'https://www.instagram.com',
+        'Referer': 'https://www.instagram.com/',
+        'X-Instagram-AJAX': '1',
+        'X-Requested-With': 'XMLHttpRequest'
     });
     this._jsonEndpoint = false;
     delete this._request.headers['X-IG-Connection-Type'];

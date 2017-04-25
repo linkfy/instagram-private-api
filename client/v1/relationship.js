@@ -9,6 +9,7 @@ function Relationship(session, params) {
 util.inherits(Relationship, Resource);
 module.exports = Relationship;
 var Request = require('./request');
+var WebRequest = require('./web/web-request');
 var Account = require('./account');
 var Exceptions = require('./exceptions');
 
@@ -68,7 +69,7 @@ Relationship.getMany = function (session, accountIds) {
 
 
 Relationship.create = function (session, accountId) {
-    return new Request(session)
+    return new WebRequest(session)
         .setMethod('POST')
         .setResource('follow', {id: accountId})
         .generateUUID()
