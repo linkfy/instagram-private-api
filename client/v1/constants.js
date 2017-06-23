@@ -37,8 +37,11 @@ const ROUTES = {
     followersFeed: 'friendships/<%= id %>/followers/<%= maxId ? ("?max_id=" + maxId) : "" %>',
     savedFeed: 'feed/saved/<%= maxId ? ("?max_id=" + maxId) : "" %>',
 
+    topSearch: 'fbsearch/topsearch/?rank_token=<%= rankToken %>&query=<%= encodeURIComponent(query) %>&context=blended&timezone_offset=10800',
     accountsSearch: 'users/search/?is_typehead=true&q=<%= encodeURIComponent(query) %>&rank_token=<%= rankToken %>',
     hashtagsSearch: 'tags/search/?count=50&q=<%= encodeURIComponent(query) %>&rank_token=<%= rankToken %>',
+    hashtagsInfo: 'tags/<%= encodeURI(tag) %>/info',
+    hashtagsRelated: 'tags/<%= encodeURI(tag) %>/related/?visited=<%= encodeURIComponent(visited) %>&related_types=<%= encodeURIComponent(related_types) %>',
     locationsSearch: 'fbsearch/places/?count=50&query=<%= encodeURIComponent(query) %>&rank_token=<%= rankToken %>',
     changeProfilePicture: 'accounts/change_profile_picture/',
     mediaConfigure: 'media/configure/',
@@ -89,9 +92,9 @@ const WEB_ROUTES = {
 }
 
 const PRIVATE_KEY = {
-    SIG_KEY: '68a04945eb02970e2e8d15266fc256f7295da123e123f44b88f09d594a5902df',
+    SIG_KEY: '299a77ffe98a252a20e1fb6bc87df721b90fe70c4cb327391b2dacaffd187f99',
     SIG_VERSION: '4',
-    APP_VERSION: '10.8.0'
+    APP_VERSION: '10.21.0'
 }
 
 
